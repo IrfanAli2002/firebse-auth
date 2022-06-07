@@ -1,26 +1,31 @@
 import React from "react";
-import {  BrowserRouter as Router,   Route,   Routes,} from "react-router-dom";
-import Dashboard from "../screens/dashboard";
-import Post from "../screens/post";
-import User from "../screens/user"
-import Todo from "../screens/todo";
-import Pic from "../screens/pic";
-import Comment from "../screens/comment";
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+} from "react-router-dom";
 
-export default function RouterApp() {
+
+import SignUpUser from "../Pages/signup";
+import LoginUser from "../Pages/login";
+import Home from "../Pages/home";
+
+const RouterApp = () => {
     return (
-        <div>
-                <Router>
+        <>
+            <Router>
                 <Routes>
-                    <Route index path="/*" element={<Dashboard/>} />
-                    <Route path="pic" element={<Pic/>}  />
-                    <Route path="todo" element={<Todo/>}  />
-                    <Route path="user" element={<User/>}  />
-                    <Route path="post" element={<Post/>}  />
-                    <Route path="comment" element={<Comment/>}  />
+                    <Route path="/" element={<SignUpUser/> } />
+                    <Route path="/home" element={<Home/> } />
+                    <Route path="login" element={<LoginUser/>} />
+
                 </Routes>
-           
-        </Router>
-            </div>
-    );
+
+
+            </Router>
+
+        </>
+    )
 }
+
+export default RouterApp
